@@ -8,7 +8,7 @@ import {ParentComponent} from "./parent.component";
     ParentComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
   ],
   exports: [
     ParentComponent

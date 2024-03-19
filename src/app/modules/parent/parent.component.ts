@@ -1,7 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import { ChildComponent } from "../child/child.component";
+
 //функциональный декоратор необходимый для создания компонентов
 
 @Component({
+  imports: [
+    ChildComponent
+  ],
   selector: 'app-parent',
   //селектор по которому к компоненту обращаются в других компонентах
   templateUrl: './parent.component.html',
@@ -17,4 +22,5 @@ export class ParentComponent implements OnInit {
     //один из хуков жизненноого цикла
   }
 
+  welcome = 'hi from parent'
 }
