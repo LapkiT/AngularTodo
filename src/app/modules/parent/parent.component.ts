@@ -4,6 +4,7 @@ import { ChildComponent } from "../child/child.component";
 //функциональный декоратор необходимый для создания компонентов
 
 @Component({
+  standalone: true,
   imports: [
     ChildComponent
   ],
