@@ -1,22 +1,25 @@
-import {Component, input, output} from '@angular/core';
+import {Component, Input, input, output} from '@angular/core';
 import { TaskService } from '../../services/task.service'
-import {NgClass, NgForOf} from "@angular/common";
+import {TaskType} from "../../intefaces/name";
+import {NgForOf} from "@angular/common";
+
 @Component({
   selector: 'app-todo-list',
   standalone: true,
   imports: [
-    NgForOf,
-    NgClass
+    NgForOf
   ],
   templateUrl: './todo-list.component.html',
   styleUrl: './todo-list.component.scss'
 })
 export class TodoListComponent {
+
   constructor(
     public TaskService: TaskService
   ) { }
-  deleteTodo(id: number) {
-    this.TaskService.myTodo = this.TaskService.myTodo.filter((t) => t.id !== id);
+  tasks = this.TaskService
+  @Input() set newTask(taska: TaskType) {
+    if (!taska) return;
+    this.tasks.addTask(taska.id, taska.title, taska.selectValue, taska.flag)
   }
-
 }

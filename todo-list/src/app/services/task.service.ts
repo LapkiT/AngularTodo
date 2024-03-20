@@ -1,18 +1,25 @@
 import { Injectable } from '@angular/core';
 
-export interface ITodo {
-  id: number,
-  title: string
-  // Другие свойства, если есть
-}
 @Injectable({
   providedIn: 'root'
 })
 export class TaskService {
-  public myTodo: Array<ITodo> = [
+  tasks = [
+    {
+      id: 1,
+      title: 'Some task 1',
+      selectValue: 'Обычное',
+      flag: false,
+    },
+    {
+      id: 2,
+      title: 'Some task 2',
+      selectValue: 'важное',
+      flag: false,
+    },
   ];
 
-  public addTodo(id: number) {
-      this.myTodo = this.myTodo.filter(todo => todo.id !== id)
+  addTask(id: number, title: string, selectValue: string, flag: boolean): void {
+    this.tasks.push({ id, title, selectValue, flag });
   }
 }

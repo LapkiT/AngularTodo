@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { TaskService } from '../../services/task.service'
-import {NgForOf} from "@angular/common";
+import {count} from "rxjs";
 @Component({
   selector: 'app-todo-input',
   standalone: true,
@@ -10,16 +9,14 @@ import {NgForOf} from "@angular/common";
   styleUrl: './todo-input.component.scss'
 })
 export class TodoInputComponent {
-  constructor(
-    public TaskService: TaskService
-  ) { }
-
-  newTodo: string = '';
-
-  addTodo() {
-    if (this.newTodo.trim() !== '') {
-      this.TaskService.myTodo.push({id: (this.TaskService.myTodo.length + 1), title: this.newTodo})
-      this.newTodo = '';
-    }
+  count: number = 0;
+  newTodo:string = '';
+  selectValues: string = 'Выберите тип'
+  @Output() outEnterTask = new EventEmitter<any>();
+  constructor() {
+  }
+  enterName(nameInput: HTMLInputElement) {
+    this.outEnterTask.emit({id: this.count++, title: this.newTodo, selectValue: this.selectValues, flag: false} );
+    nameInput.value = '';
   }
 }

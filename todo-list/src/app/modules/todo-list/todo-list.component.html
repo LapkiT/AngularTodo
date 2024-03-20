@@ -11,11 +11,11 @@
           </tr>
           </thead>
           <tbody>
-          <tr scope="row" *ngFor="let task of TaskService.myTodo">
+          <tr scope="row" *ngFor="let task of TaskService.tasks">
             <td class = "td-title">{{ task.title}}</td>
             <td>
               <div style = "display: flex; gap: 20px">
-                <button class="btn btn-danger btn-sm float-right" (click)="deleteTodo(task.id)">Удалить</button>
+                <button class="btn btn-danger btn-sm float-right">Удалить</button>
                 <div class="form-check">
                   <input class="form-check-input flag-todo" type="checkbox" value="{{task.id}}" id="flexCheckChecked">
                 </div>
