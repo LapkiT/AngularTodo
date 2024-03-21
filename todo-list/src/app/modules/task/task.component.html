@@ -1,1 +1,17 @@
-
+<tr scope="row">
+  <td class = "td-title">{{ task.title}}</td>
+  <td>
+    <div style = "display: flex; gap: 20px">
+      <button class="btn btn-danger btn-sm float-right">Удалить</button>
+      <div class="form-check">
+        <input
+          class="form-check-input flag-todo"
+          type="checkbox"
+          [id]="task.id"
+          [checked]="task.Flag"
+          (change)="checkTask(task.id)"
+           >
+      </div>
+    </div>
+  </td>
+</tr>

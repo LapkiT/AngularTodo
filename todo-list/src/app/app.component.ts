@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {TodoListComponent} from "./modules/todo-list/todo-list.component";
 import {TodoInputComponent} from "./modules/todo-input/todo-input.component";
-import {TaskType} from "./intefaces/name";
+import {EventValue, TaskTyp} from "./intefaces/name";
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -12,9 +12,9 @@ import {TaskType} from "./intefaces/name";
 })
 export class AppComponent {
   title = 'todo-list';
-  newTask!: TaskType;
+  newTask!: EventValue;
 
-  setNewTask(newTask: any): void {
+  setNewTask(newTask: EventValue): void {
      if (!newTask) return;
      console.log(this.newTask);
      this.newTask = newTask;

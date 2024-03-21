@@ -1,17 +1,29 @@
 <div class="row">
   <div class="col-md-6 offset-md-3">
     <h1 class="text-center mb-4">Добавить задачу</h1>
+    <form
+      class="form-task-input"
+      [formGroup]="taskForm"
+      (submit)="addNewTask()"
+    >
     <div class="input-group mb-3">
-      <input type="text" class="form-control" placeholder="Добавить новую задачу"  [(ngModel)]="newTodo" #nameInput>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Добавить новую задачу"
+        formControlName="title"
+        >
       <div class="input-group-append">
-          <button class="btn btn-primary" (click)="enterName(nameInput)">Добавить</button>
+          <button class="btn btn-primary">Добавить</button>
       </div>
     </div>
-    <select class="form-select" [(ngModel)]="selectValues">
-      <option value="Все" selected>Все</option>
-      <option value="Обычное">Обычное</option>
-      <option value="Важное">Важное</option>
-    </select>
+      <app-select-type
+        class="select"
+        [control]="taskForm.controls['taskType']"
+        [form]="taskForm"
+        [taskTypesValues]="taskTypesValues"
+      />
+    </form>
   </div>
 </div>
 <br/>

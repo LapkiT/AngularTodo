@@ -1,25 +1,29 @@
 import { Injectable } from '@angular/core';
+import {EventValue, TaskTyp, TaskTypes} from "../intefaces/name";
 
 @Injectable({
   providedIn: 'root'
 })
 export class TaskService {
-  tasks = [
-    {
-      id: 1,
-      title: 'Some task 1',
-      selectValue: 'Обычное',
-      flag: false,
-    },
-    {
-      id: 2,
-      title: 'Some task 2',
-      selectValue: 'важное',
-      flag: false,
-    },
-  ];
+  tasks: TaskTyp[] = [];
+  filteredTask: TaskTyp[] = this.tasks;
 
-  addTask(id: number, title: string, selectValue: string, flag: boolean): void {
-    this.tasks.push({ id, title, selectValue, flag });
+  addTask(title: string, selectValue = TaskTypes.Regular): void {
+    if (!title) return;
+
+    this.tasks = [
+      ...this.tasks,
+      { id: (this.tasks.length+1), title, selectValue, Flag: false },
+    ];
+
+    this.filteredTask = this.tasks;
   }
+
+  filterTask(searchParams: EventValue) {
+    if (!searchParams) {
+      this.filteredTask = this.tasks;
+      return;
+    }
+  }
+
 }
