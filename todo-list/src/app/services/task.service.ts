@@ -25,5 +25,20 @@ export class TaskService {
       return;
     }
   }
+  private _getIntersectionOf(arr1: TaskTyp[], arr2: TaskTyp[]) {
+    return [arr1, arr2].reduce((acc, arr) => {
+      return acc.filter((res) => arr.find((value) => value.id === res.id));
+    });
+  }
 
+
+  checkTask(id: number) {
+    this.tasks = this.tasks.map((task) =>
+      task.id === id ? { ...task, Flag: !task.Flag } : task
+    );
+    this.filteredTask = this._getIntersectionOf(
+      this.tasks,
+      this.filteredTask
+    );
+  }
 }

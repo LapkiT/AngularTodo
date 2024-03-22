@@ -3,10 +3,11 @@ import { RouterOutlet } from '@angular/router';
 import {TodoListComponent} from "./modules/todo-list/todo-list.component";
 import {TodoInputComponent} from "./modules/todo-input/todo-input.component";
 import {EventValue, TaskTyp} from "./intefaces/name";
+import {SearchPanelComponent} from "./modules/search-panel/search-panel.component";
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, TodoListComponent, TodoInputComponent ],
+  imports: [RouterOutlet, TodoListComponent, TodoInputComponent, SearchPanelComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

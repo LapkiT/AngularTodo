@@ -27,9 +27,14 @@ export class TodoListComponent {
 
     this.tasks.addTask(taska.title, taska.taskType as TaskTypes);
     this._filteredTasks = this.tasks.filteredTask;
+    console.log(this._filteredTasks)
   }
   @Input() set filteredTasks(searchParams: EventValue) {
     this.tasks.filterTask(searchParams);
+    this._filteredTasks = this.tasks.filteredTask;
+  }
+  checkTask(id: number): void {
+    this.TaskService.checkTask(id);
     this._filteredTasks = this.tasks.filteredTask;
   }
 

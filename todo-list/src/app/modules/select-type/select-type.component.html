@@ -1,10 +1,14 @@
-<select
-  class="form-select"
-  name="task-st"
-  formControlName="taskType"
-  [formControl]="control"
->
-  <option *ngFor="let taskType of taskTypesValues" [value]="taskType">
-    {{ taskType }}
-  </option>
-</select>
+<div
+    [formGroup]="form"
+    >
+  <select
+    class="form-select"
+    name="task-st"
+    formControlName="taskType"
+    [formControl]="control"
+  >
+    <option *ngFor="let taskType of taskTypesValues" [value]="taskType">
+      {{ taskType }}
+    </option>
+  </select>
+</div>

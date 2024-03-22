@@ -17,4 +17,5 @@ export class SelectTypeComponent {
   @Input() taskTypesValues!: string[];
   @Input() control!: FormControl<TaskTypes | FilterTaskT | null>;
   @Input() form!: FormGroup;
+    protected readonly FormGroup = FormGroup;
 }

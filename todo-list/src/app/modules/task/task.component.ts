@@ -32,4 +32,6 @@ export class TaskComponent {
   checkTask(id: number) {
     this.taskCheckEvent.emit(id);
   }
+
+  protected readonly Number = Number;
 }

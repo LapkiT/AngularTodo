@@ -23,7 +23,6 @@ export class TodoInputComponent {
   taskTypesValues = Object.values(TaskTypes);
 
   addNewTask() {
-    console.log(this.taskForm)
     this.outEnterTask.emit({
       title: this.taskForm.value.title as string,
       taskType: this.taskForm.value.taskType as TaskTypes,

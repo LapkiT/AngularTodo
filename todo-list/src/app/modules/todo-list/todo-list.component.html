@@ -1,20 +1,20 @@
  <br />
   <div class="row">
     <div class="col-md-6 offset-md-3">
-      <h1 class="text-center mb-4">Список задач</h1>
+      <h3 class="text-center mb-4">Список задач</h3>
       <ul class="list-group">
         <table class="table">
           <thead>
           <tr>
-            <th scope="col">Задача</th>
-            <th scope = 'col'>Действие</th>
+            <th scope="col">Задачи</th>
+            <th scope = "col"></th>
           </tr>
           </thead>
           <tbody>
-            <app-task
-              *ngFor="let task of filteredTasks"
-              [task]="task"
-            />
+          <app-task
+            *ngFor="let task of filteredTasks"
+            [task]="task"
+            (taskCheckEvent)="checkTask($event)"/>
           </tbody>
         </table>
       </ul>

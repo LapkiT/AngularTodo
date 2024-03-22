@@ -7,7 +7,7 @@ export enum FilterTaskT {
   All = 'Все',
   Regular = 'Обычное',
   Important = 'Важное',
-  Checked = 'Checked',
+  Checked = 'Выполненное',
 }
 
 export interface TaskTyp {
