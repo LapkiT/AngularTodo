@@ -11,12 +11,5 @@
           (change)="checkTask(task.id)"
            >
       </div>
-      <form [formGroup]="taskForm">
-      <app-select-type
-        [taskTypesValues]="taskTypesValues"
-        [control]="taskForm.controls['taskType']"
-        [form]="taskForm"
-      />
-      </form>
     </div>
 </div>
