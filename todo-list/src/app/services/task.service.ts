@@ -84,6 +84,16 @@ export class TaskService {
         task.selectValue === searchParams.taskType
     );
   }
+  changeTask(changedTask: TaskTyp): void {
+    this.tasks = this.tasks.map((task) =>
+      task.id === changedTask.id ? changedTask : task
+    );
+
+    this.filteredTask = this._getIntersectionOf(
+      this.tasks,
+      this.filteredTask
+    );
+  }
 
   deleteTask(id: number) {
     this.tasks = this.tasks.filter((task) => task.id !== id);

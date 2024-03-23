@@ -2,6 +2,10 @@
   <div style="word-break: break-all;" class = "td-title">{{ task.title}}</div>
     <div style = "display: flex; gap: 20px">
       <button class="btn btn-danger btn-sm float-right" (click)="deleteTask(task.id)">Удалить</button>
+      <app-dropdown-list-type
+        (changeTaskTypeEvent)="changeTaskType($event)"
+        class="drop-down-list"
+        [isTaskImportant]="isTaskImportant"/>
       <div class="form-check">
         <input
           class="form-check-input flag-todo"

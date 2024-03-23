@@ -1,4 +1,4 @@
-import {Component, Input, input, output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, input, output} from '@angular/core';
 import { TaskService } from '../../services/task.service'
 import {EventValue, TaskTyp, TaskTypes} from "../../intefaces/name";
 import {NgForOf} from "@angular/common";
@@ -12,7 +12,8 @@ import {TaskComponent} from "../task/task.component";
     TaskComponent
   ],
   templateUrl: './todo-list.component.html',
-  styleUrl: './todo-list.component.scss'
+  styleUrl: './todo-list.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TodoListComponent {
 
@@ -45,5 +46,10 @@ export class TodoListComponent {
 
   get filteredTasks(): TaskTyp[] {
     return this._filteredTasks;
+  }
+
+  changeTask(changedTask: TaskTyp): void {
+    this.tasks.changeTask(changedTask);
+    this._filteredTasks = this.tasks.filteredTask;
   }
 }

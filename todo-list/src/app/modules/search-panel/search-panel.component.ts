@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component, EventEmitter, Output, ChangeDetectionStrategy } from '@angular/core';
 import {FormControl, FormGroup, ReactiveFormsModule} from "@angular/forms";
 import {SelectTypeComponent} from "../select-type/select-type.component";
 import {EventValue, FilterTaskT} from "../../intefaces/name";
@@ -11,7 +11,8 @@ import {EventValue, FilterTaskT} from "../../intefaces/name";
     SelectTypeComponent
   ],
   templateUrl: './search-panel.component.html',
-  styleUrl: './search-panel.component.scss'
+  styleUrl: './search-panel.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SearchPanelComponent {
   searchForm = new FormGroup({

@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Output} from '@angular/core';
 import { FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
 import {SelectTypeComponent} from "../select-type/select-type.component";
 import {TaskTypes} from "../../intefaces/name";
@@ -10,7 +10,8 @@ import {TaskTypes} from "../../intefaces/name";
     ReactiveFormsModule
   ],
   templateUrl: './todo-input.component.html',
-  styleUrl: './todo-input.component.scss'
+  styleUrl: './todo-input.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TodoInputComponent {
   @Output() outEnterTask = new EventEmitter<any>();

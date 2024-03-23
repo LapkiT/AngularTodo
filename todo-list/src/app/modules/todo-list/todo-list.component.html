@@ -15,7 +15,8 @@
             *ngFor="let task of filteredTasks"
             [task]="task"
             (taskCheckEvent)="checkTask($event)"
-             (taskDeleteEvent)="deleteTask($event)"/>
+             (taskDeleteEvent)="deleteTask($event)"
+             (taskChangeEvent)="changeTask($event)"/>
           </tbody>
         </table>
       </ul>

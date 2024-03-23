@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {FilterTaskT, TaskTypes} from "../../intefaces/name";
 import {NgForOf} from "@angular/common";
@@ -11,7 +11,8 @@ import {NgForOf} from "@angular/common";
     ReactiveFormsModule
   ],
   templateUrl: './select-type.component.html',
-  styleUrl: './select-type.component.scss'
+  styleUrl: './select-type.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SelectTypeComponent {
   @Input() taskTypesValues!: string[];

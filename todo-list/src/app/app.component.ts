@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {TodoListComponent} from "./modules/todo-list/todo-list.component";
 import {TodoInputComponent} from "./modules/todo-input/todo-input.component";
@@ -9,7 +9,8 @@ import {SearchPanelComponent} from "./modules/search-panel/search-panel.componen
   standalone: true,
   imports: [RouterOutlet, TodoListComponent, TodoInputComponent, SearchPanelComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
   title = 'todo-list';

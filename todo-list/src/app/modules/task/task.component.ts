@@ -1,18 +1,21 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
 import {FilterTaskT, TaskTyp, TaskTypes} from "../../intefaces/name";
 import {NgForOf} from "@angular/common";
 import {SelectTypeComponent} from "../select-type/select-type.component";
 import {FormControl, FormGroup, ReactiveFormsModule} from "@angular/forms";
+import {DropdownListTypeComponent} from "../dropdown-list-type/dropdown-list-type.component";
 @Component({
   selector: 'app-task',
   standalone: true,
   imports: [
     NgForOf,
     SelectTypeComponent,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DropdownListTypeComponent
   ],
   templateUrl: './task.component.html',
-  styleUrl: './task.component.scss'
+  styleUrl: './task.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TaskComponent {
   @Input() task!: TaskTyp;
@@ -32,7 +35,7 @@ export class TaskComponent {
   }
 
   changeTaskType(newTaskType: TaskTypes): void {
-    const updatedTask = { ...this.task, taskType: newTaskType };
+    const updatedTask = { ...this.task, selectValue: newTaskType };
 
     this.taskChangeEvent.emit(updatedTask);
   }

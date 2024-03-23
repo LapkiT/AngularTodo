@@ -1,10 +1,10 @@
 <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Dropdown button
+  <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    {{buttonText}}
   </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <li class="dropdown-item">Action</li>
-    <li class="dropdown-item">Another action</li>
-    <li class="dropdown-item">Something else here</li>
+  <ul class="dropdown-menu bg-light text-dark" aria-labelledby="dropdownMenuButton">
+    <li class="dropdown-item" (click)="changeTaskType()">
+      {{dropDownText}}
+    </li>
   </ul>
 </div>
