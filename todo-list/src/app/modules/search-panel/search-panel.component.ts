@@ -15,7 +15,7 @@ import {EventValue, FilterTaskT} from "../../intefaces/name";
 })
 export class SearchPanelComponent {
   searchForm = new FormGroup({
-    taskName: new FormControl(''),
+    title: new FormControl(''),
     taskType: new FormControl<FilterTaskT | null>(FilterTaskT.All),
   });
   taskTypesValues = Object.values(FilterTaskT);
@@ -24,6 +24,6 @@ export class SearchPanelComponent {
 
   searchTasks() {
     this.searchQueryEvent.emit(this.searchForm.value as EventValue);
-    this.searchForm.get('taskName')?.reset('');
+    this.searchForm.get('title')?.reset('');
   }
 }

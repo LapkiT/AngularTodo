@@ -14,10 +14,12 @@ import {SearchPanelComponent} from "./modules/search-panel/search-panel.componen
 export class AppComponent {
   title = 'todo-list';
   newTask!: EventValue;
-
+  taskParams!: EventValue;
   setNewTask(newTask: EventValue): void {
      if (!newTask) return;
-     console.log(this.newTask);
      this.newTask = newTask;
+  }
+  searchTasks(taskParams: EventValue): void {
+    this.taskParams = taskParams;
   }
 }

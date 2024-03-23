@@ -38,6 +38,11 @@ export class TodoListComponent {
     this._filteredTasks = this.tasks.filteredTask;
   }
 
+  deleteTask(id: number): void {
+    this.tasks.deleteTask(id);
+    this._filteredTasks = this.tasks.filteredTask;
+  }
+
   get filteredTasks(): TaskTyp[] {
     return this._filteredTasks;
   }

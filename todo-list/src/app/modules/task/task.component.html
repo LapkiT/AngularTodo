@@ -1,7 +1,7 @@
 <div class="d-flex justify-content-between">
   <div style="word-break: break-all;" class = "td-title">{{ task.title}}</div>
     <div style = "display: flex; gap: 20px">
-      <button class="btn btn-danger btn-sm float-right">Удалить</button>
+      <button class="btn btn-danger btn-sm float-right" (click)="deleteTask(task.id)">Удалить</button>
       <div class="form-check">
         <input
           class="form-check-input flag-todo"
@@ -11,5 +11,12 @@
           (change)="checkTask(task.id)"
            >
       </div>
+      <form [formGroup]="taskForm">
+      <app-select-type
+        [taskTypesValues]="taskTypesValues"
+        [control]="taskForm.controls['taskType']"
+        [form]="taskForm"
+      />
+      </form>
     </div>
 </div>
