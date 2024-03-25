@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
-import {FilterTaskT, TaskTyp, TaskTypes} from "../../intefaces/name";
+import {FilterTaskT, TaskTyp, TaskTypes} from "../../../intefaces/name";
 import {NgForOf} from "@angular/common";
 import {SelectTypeComponent} from "../select-type/select-type.component";
 import {FormControl, FormGroup, ReactiveFormsModule} from "@angular/forms";

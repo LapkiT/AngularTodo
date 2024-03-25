@@ -1,6 +1,6 @@
 import {ChangeDetectionStrategy, Component, Input, input, output} from '@angular/core';
 import { TaskService } from '../../services/task.service'
-import {EventValue, TaskTyp, TaskTypes} from "../../intefaces/name";
+import {EventValue, TaskTyp, TaskTypes} from "../../../intefaces/name";
 import {NgForOf} from "@angular/common";
 import {TaskComponent} from "../task/task.component";
 

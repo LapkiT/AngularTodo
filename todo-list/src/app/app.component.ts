@@ -1,9 +1,9 @@
 import {ChangeDetectionStrategy, Component} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import {TodoListComponent} from "./modules/todo-list/todo-list.component";
-import {TodoInputComponent} from "./modules/todo-input/todo-input.component";
+import {TodoListComponent} from "./modules/Components/todo-list/todo-list.component";
+import {TodoInputComponent} from "./modules/Components/todo-input/todo-input.component";
 import {EventValue, TaskTyp} from "./intefaces/name";
-import {SearchPanelComponent} from "./modules/search-panel/search-panel.component";
+import {SearchPanelComponent} from "./modules/Components/search-panel/search-panel.component";
 @Component({
   selector: 'app-root',
   standalone: true,

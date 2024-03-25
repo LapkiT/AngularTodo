@@ -1,6 +1,6 @@
 import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {FilterTaskT, TaskTypes} from "../../intefaces/name";
+import {FilterTaskT, TaskTypes} from "../../../intefaces/name";
 import {NgForOf} from "@angular/common";
 @Component({
   selector: 'app-select-type',

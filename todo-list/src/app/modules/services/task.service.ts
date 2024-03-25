@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {EventValue, FilterTaskT, TaskTyp, TaskTypes} from "../intefaces/name";
+import {EventValue, FilterTaskT, TaskTyp, TaskTypes} from "../../intefaces/name";
 
 @Injectable({
   providedIn: 'root'
@@ -41,7 +41,6 @@ export class TaskService {
   filterTask(searchParams: EventValue): void {
     console.log(searchParams)
     if (!searchParams) {
-      console.log("1")
       this.filteredTask = this.tasks;
       return;
     }
@@ -57,7 +56,6 @@ export class TaskService {
     }
 
     if (searchParams.taskType === FilterTaskT.All) {
-      console.log("3")
       this.filteredTask = this.tasks.filter((task) =>
         this._isTaskIncludes(task.title, searchParams.title)
       );
@@ -66,7 +64,6 @@ export class TaskService {
     }
 
     if (searchParams.taskType === FilterTaskT.Checked) {
-      console.log("4")
       this.filteredTask = this.tasks.filter(
         (task) =>
           this._isTaskIncludes(task.title, searchParams.title) &&

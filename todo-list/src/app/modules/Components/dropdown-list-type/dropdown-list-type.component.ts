@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {TaskTypes} from "../../intefaces/name";
+import {TaskTypes} from "../../../intefaces/name";
 
 @Component({
   selector: 'app-dropdown-list-type',
