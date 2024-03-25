@@ -1,8 +1,8 @@
 import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {EventValue} from "../../intefaces/name";
-import {TodoListComponent} from "../../modules/Components/todo-list/todo-list.component";
-import {SearchPanelComponent} from "../../modules/Components/search-panel/search-panel.component";
-import {TodoInputComponent} from "../../modules/Components/todo-input/todo-input.component";
+import {TodoListComponent} from "../../Shared/Components/todo-components/todo-list/todo-list.component";
+import {SearchPanelComponent} from "../../Shared/Components/todo-components/search-panel/search-panel.component";
+import {TodoInputComponent} from "../../Shared/Components/todo-components/todo-input/todo-input.component";
 
 @Component({
   selector: 'app-todo-list-app',

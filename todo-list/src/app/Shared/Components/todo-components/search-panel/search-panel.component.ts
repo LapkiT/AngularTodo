@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Output, ChangeDetectionStrategy } from '@angular/core';
 import {FormControl, FormGroup, ReactiveFormsModule} from "@angular/forms";
 import {SelectTypeComponent} from "../select-type/select-type.component";
-import {EventValue, FilterTaskT} from "../../../intefaces/name";
+import {EventValue, FilterTaskT} from "../../../../intefaces/name";
 
 @Component({
   selector: 'app-search-panel',

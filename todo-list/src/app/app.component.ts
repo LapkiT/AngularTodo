@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {TodoListAppComponent} from "./pages/todo-list-app/todo-list-app.component";
-import {IndexAuthPagesComponent} from "./auth/components/index-auth-pages/index-auth-pages.component";
+import {IndexAuthPagesComponent} from "./Shared/Components/auth/index-auth/index-auth-pages.component";
 @Component({
   selector: 'app-root',
   standalone: true,

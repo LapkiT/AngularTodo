@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-index-auth-pages',
+  selector: 'app-index-auth',
   standalone: true,
   imports: [],
   templateUrl: './index-auth-pages.component.html',

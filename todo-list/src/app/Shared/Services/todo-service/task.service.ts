@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {EventValue, FilterTaskT, TaskTyp, TaskTypes} from "../../intefaces/name";
+import {EventValue, FilterTaskT, TaskTyp, TaskTypes} from "../../../intefaces/name";
 
 @Injectable({
   providedIn: 'root'
