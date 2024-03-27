@@ -3,6 +3,7 @@ import {EventValue} from "../../intefaces/name";
 import {TodoListComponent} from "../../Shared/Components/todo-components/todo-list/todo-list.component";
 import {SearchPanelComponent} from "../../Shared/Components/todo-components/search-panel/search-panel.component";
 import {TodoInputComponent} from "../../Shared/Components/todo-components/todo-input/todo-input.component";
+import {HeaderTodoComponent} from "../../Shared/Components/todo-components/header-todo/header-todo.component";
 
 @Component({
   selector: 'app-todo-list-app',
@@ -10,7 +11,8 @@ import {TodoInputComponent} from "../../Shared/Components/todo-components/todo-i
   imports: [
     TodoListComponent,
     SearchPanelComponent,
-    TodoInputComponent
+    TodoInputComponent,
+    HeaderTodoComponent
   ],
   templateUrl: './todo-list-app.component.html',
   styleUrl: './todo-list-app.component.scss',
@@ -26,4 +28,5 @@ export class TodoListAppComponent {
   searchTasks(taskParams: EventValue): void {
     this.taskParams = taskParams;
   }
+
 }

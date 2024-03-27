@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core';
 import {EventValue, FilterTaskT, TaskTyp, TaskTypes} from "../../../intefaces/name";
+import {Observable, tap} from "rxjs";
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
 })
 export class TaskService {
+  constructor(private httpClient: HttpClient) {}
   tasks: TaskTyp[] = [];
   filteredTask: TaskTyp[] = this.tasks;
   private _isTaskIncludes(taskName: string, target: string) {
@@ -97,6 +100,15 @@ export class TaskService {
     this.filteredTask = this._getIntersectionOf(
       this.tasks,
       this.filteredTask
+    );
+  }
+
+  public fetchTasks(): Observable<TaskTyp[]> {
+    return this.httpClient.get<TaskTyp[]>('assets/todo-list.json').pipe(
+      tap((response: TaskTyp[]) => {
+        this.tasks = response;
+        this.filteredTask = response;
+      })
     );
   }
 }

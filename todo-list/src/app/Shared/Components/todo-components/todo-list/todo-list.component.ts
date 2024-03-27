@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, Input, input, output} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, input, output} from '@angular/core';
 import { TaskService } from '../../../Services/todo-service/task.service'
 import {EventValue, TaskTyp, TaskTypes} from "../../../../intefaces/name";
 import {NgForOf} from "@angular/common";
@@ -18,8 +18,19 @@ import {TaskComponent} from "../task/task.component";
 export class TodoListComponent {
 
   constructor(
-    public TaskService: TaskService
+    public TaskService: TaskService,
+  private readonly changeDetector: ChangeDetectorRef
   ) { }
+
+  ngOnInit(): void {
+    this.TaskService.fetchTasks().subscribe({
+      next: (tasks: TaskTyp[]) => {
+        this._filteredTasks = tasks;
+        this.changeDetector.detectChanges();
+      },
+    });
+  }
+
   tasks = this.TaskService;
   private _filteredTasks = this.tasks.filteredTask;
 

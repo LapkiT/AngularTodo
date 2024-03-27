@@ -30,8 +30,11 @@
     </div>
     <div class="mb-3 form-check">
     </div>
-    <div class="text-center">
-      <button type="submit" class="btn btn-warning">Отправить</button>
+    <div class="text-center col">
+      <button type="submit" class="btn btn-warning" (click)="login()">Отправить</button>
+      <div class="col">
+        <a routerLink="/about" class="btn btn-link">О приложении</a>
+      </div>
     </div>
   </form>
 </div>
