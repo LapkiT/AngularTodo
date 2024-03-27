@@ -12,7 +12,7 @@ import {HeaderTodoComponent} from "../../Shared/Components/todo-components/heade
     TodoListComponent,
     SearchPanelComponent,
     TodoInputComponent,
-    HeaderTodoComponent
+    HeaderTodoComponent,
   ],
   templateUrl: './todo-list-app.component.html',
   styleUrl: './todo-list-app.component.scss',
