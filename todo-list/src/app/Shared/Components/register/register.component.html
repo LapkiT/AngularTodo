@@ -1,6 +1,6 @@
 <div class="container w-75">
-  <h1 class = "display-1 text-center mb-3 aut-h1">Авторизация</h1>
-  <form [formGroup]="loginForm">
+  <h1 class = "display-1 text-center mb-3 aut-h1">Регистрация</h1>
+  <form [formGroup]="registerForm">
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label"><h1 class="text-center mb-4">Электронный адрес</h1></label>
       <input
@@ -31,9 +31,9 @@
     <div class="mb-3 form-check">
     </div>
     <div class="text-center col">
-      <button type="submit" class="btn btn-warning" (click)="login()">Отправить</button>
+      <button type="submit" class="btn btn-warning" (click)="register()">Зарегистрировать</button>
       <div class="col">
-        <a routerLink = "/register" class="btn">Создать аккаунт</a>
+        <a routerLink="" class="btn">Уже есть аккаунт</a>
         <a routerLink="/about" class="btn btn-link">О приложении</a>
       </div>
     </div>

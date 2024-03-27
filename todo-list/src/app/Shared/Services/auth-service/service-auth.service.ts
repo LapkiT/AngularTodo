@@ -2,7 +2,7 @@ import { inject, Injectable} from '@angular/core';
 import {catchError, map, Observable, of, tap} from "rxjs";
 import {Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
-import {AuthResponse, logUser, User} from "../../../intefaces/name";
+import {AuthResponse, logUser, regResponse, User} from "../../../intefaces/name";
 import {environment} from "../../../../environments/environment";
 
 @Injectable({
@@ -10,6 +10,7 @@ import {environment} from "../../../../environments/environment";
 })
 export class ServiceAuthService {
   private readonly JWT_TOKEN = 'jwt_token'
+  public Registrashin = false;
   private loggedUser?: string;
   private router = inject(Router)
   private http = inject(HttpClient)
@@ -23,6 +24,21 @@ export class ServiceAuthService {
           }
         }),
         map((res: AuthResponse): User => this.parseJwt(res.token)),
+        catchError((): Observable<null> => {
+          localStorage.removeItem('jwt_token');
+          alert("Ошибка")
+          return of(null);
+        })
+      );
+  }
+
+  public register(user: logUser): Observable<regResponse | null> {
+    return this.http.post<regResponse>(environment.backendOrigin + '/auth/registration', user)
+      .pipe(
+        tap((res: regResponse) => {
+          this.Registrashin = true;
+          alert("Пользователь зарегистрирован");
+        }),
         catchError((): Observable<null> => {
           localStorage.removeItem('jwt_token');
           alert("Ошибка")

@@ -37,6 +37,10 @@ export interface AuthResponse {
   token: string;
 }
 
+export interface regResponse {
+  token: string
+}
+
 export interface User {
   email: string,
   "id": number,
