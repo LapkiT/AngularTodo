@@ -5,7 +5,6 @@ import {
   from '@angular/common/http';
 import {ServiceAuthService} from "../Services/auth-service/service-auth.service";
 
-@Injectable()
 export const AuthInterceptor: HttpInterceptorFn = (req, next) => {
   const authService = inject(ServiceAuthService);
 
